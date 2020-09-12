@@ -51,3 +51,32 @@ Keil and GNU assembers have different names for same directives:
 Comparison of assembly code in Keil and GNU compilers:
 ![Directives](img/rules_and_directives/keil_vs_gnu.PNG)
 
+</br>
+
+## Binary operators
+
+![Operators](img/rules_and_directives/binary_operators.PNG)
+
+## Swaping registers content
+
+To swap R0 and R1 without using other registers we can run:
+
+R0 = R0 xor R1  
+R1 = R0 xor R1  
+R0 = R0 xor R1  
+
+Example:
+
+R0 = 0b1010  
+R1 = 0b1100  
+
+R0 = 0b1010 ^ 0b1100 = 0b0110
+R1 = 0b0110 ^ 0b1100 = 0b1010
+R0 = 0b0110 ^ 0b1010 = 0b1100
+
+In ASM:
+``` asm
+EOR R0, R0, R1
+EOR R1, R0, R1
+EOR R0, R0, R1
+```
