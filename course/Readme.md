@@ -8,3 +8,5 @@
 
 [2. Rules and directives](02_Rules_and_directives.md)
 
+[3. Load/Store instructions](03_Load_store_instructions.md)
+
