@@ -2,7 +2,7 @@
 
 ## Links
 
-[ARM assembler simulator](https://salmanarif.bitbucket.io/visual/index.html)  
+[ARM assembler simulator](https://wunkolo.github.io/OakSim)  
 
 </br>
 
@@ -29,12 +29,15 @@ ld -o program program.o
 q (quit)              - Exit GDB
 l (list)              - List source code
 b (break)             - Set brak point
-r (run)               - Run program
 i r (info register)   - Examine CPU registers
 disas (disassemble)   - Disassemble machine code
+
+r (run)               - Run program
 stepi                 - Step through instruction
 c (continue)          - Continue execution
+
 x                     - Examine memory
+x/32b 0x10070         - Examine 32 bytes from address 0x10070
 ```
 
 </br>

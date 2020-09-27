@@ -10,3 +10,5 @@
 
 [3. Load/Store instructions](03_Load_store_instructions.md)
 
+[4. Constants and literal pools](04_Constants_and_literal_pools.md)
+
