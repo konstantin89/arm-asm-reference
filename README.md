@@ -65,3 +65,13 @@ You can observe the exit code of the last exited command by running:
 ``` bash
 echo $?
 ```
+
+</br>
+
+### GNU vs Keil Directives
+
+``` text
+ .req - Alias for register (foo .req R0).
+```
+
+![Directives](directives.PNG)

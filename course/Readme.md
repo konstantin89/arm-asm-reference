@@ -12,3 +12,4 @@
 
 [4. Constants and literal pools](04_Constants_and_literal_pools.md)
 
+[5. Arithmetic and logic](05_Arithmetic_and_logic.md)
