@@ -117,6 +117,79 @@ R0,R1 and R2,R3 and stores the sum in R4,R5.
 
 ![add](img/arithm_and_logic/add_64_bit_number.PNG)
 
+</br>
+
+## Load signed data
+
+The instruction `LDRSB` can be used to store signed byte into  
+register. This instruction extends the sign bit.
+
+
+``` asm
+	.global _start
+
+SignedData:   .byte -9
+              .align 4
+
+_start:
+
+        LDR R0, =SignedData    // R0 is the ptr for SignedData
+
+        LDRSB R1, [R0]         // R1 = -9 
+
+        MOV R7,#1
+        SWI 0
+
+```
+
+</br>
+
+## Bit manipulation inbstructions
+
+Bit manipulation instructions:
+![add](img/arithm_and_logic/bit_instr.PNG)
+
+Example of BFI insturction (Bit Field Insert):
+![add](img/arithm_and_logic/bit_instr_bfi.PNG)
+
+Example of BFC insturction (Bit Field Clear):
+![add](img/arithm_and_logic/bit_instr_bfc.PNG)
+
+</br>
+
+## Saturated math instructions
+
+Saturated math instructions needed to prevent incorrect values  
+resulted from numbers overflows.  
+It can prevent sign change of overflown numbers.  
+
+The example below describes sensor input with and whithout  
+saturated math. The upper graph demonstrates data corruption.    
+The corruption resulted from number overflow that caused sign  
+change.  
+![add](img/arithm_and_logic/saturated_math.PNG)
+
+Some saturated math instructions:
+![add](img/arithm_and_logic/saturated_math_instr.PNG)
+
+</br>
+
+## Multiplication instructions
+
+![add](img/arithm_and_logic/mul_instr.PNG)
+
+Some multiplication instructions examples:
+![add](img/arithm_and_logic/mul_instr_examples.PNG)
+![add](img/arithm_and_logic/mul_instr_examples2.PNG)
+![add](img/arithm_and_logic/mul_instr_examples3.PNG)
+
+</br>
+
+## Division instructions
+
+![add](img/arithm_and_logic/div.PNG)
+
+</br>
 
 ## Example: Max value from data set
 
