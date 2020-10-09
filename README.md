@@ -2,7 +2,9 @@
 
 ## Links
 
-[ARM assembler simulator](https://wunkolo.github.io/OakSim)  
+[ARM assembler simulator](https://wunkolo.github.io/OakSim)
+
+[Systemcall table per arch](https://chromium.googlesource.com/chromiumos/docs/+/master/constants/syscalls.md)
 
 </br>
 
@@ -79,7 +81,16 @@ echo $?
 ### GNU vs Keil Directives
 
 ``` text
- .req - Alias for register (foo .req R0).
+.req - Alias for register.
+       foo .req R0
+
+.equ - Define a constant.
+      .equ BYTES_TO_ALLOCATE, 16
 ```
 
-![Directives](directives.PNG)
+![directives](directives.PNG)
+
+### System-calls calling conventions
+
+![syscalls](syscall_conventions.PNG)
+
