@@ -90,7 +90,14 @@ echo $?
 
 ![directives](directives.PNG)
 
+</br>
+
 ### System-calls calling conventions
 
 ![syscalls](syscall_conventions.PNG)
 
+</br>
+
+### Interesting topics
+
+[Stack pointer and Frame pointer](https://stackoverflow.com/questions/15752188/arm-link-register-and-frame-pointer#:~:text=The%20stack%20is%20used%20to,or%20locals%20in%20your%20function.&text=So%20the%20sp%20is%20where,a%20data%20aspect%20of%20functions.)
