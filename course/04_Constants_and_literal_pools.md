@@ -54,8 +54,9 @@ ADRL is used for addresses in medium offset from the current PC.
 
 ## Loading memory from constant 
 
-The following code example, defines constant memory range,  
-and loads values from this range into registers using offsets.  
+The following code example does the following:
+* define constant memory range    
+* loads values from this range into registers using offsets.  
 
 ``` asm
 	.global _start
