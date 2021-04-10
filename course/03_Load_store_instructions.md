@@ -62,6 +62,8 @@ the instruction is done. The effective address is R1.
 </br>
 
 ### Endianess
+ARM processors are `little endian`.
+
 ![Endianess ](img/load_store_inst/endianness.PNG)
 
 </br>

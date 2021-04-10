@@ -2,33 +2,39 @@
 
 ## Converting between number systems
 
-Binary to decimal
+Binary to decimal  
 ![Converting binary to decimal](img/intro/number_systems_1.PNG)
 
-Hex to decimal
+Hex to decimal  
 ![Converting hex to decimal](img/intro/number_systems_2.PNG)
 
 
 ## Assembly tools
 
-![Assembly tools](img/intro/assembly_tools.PNG)
+![Assembly tools](img/intro/assembly_tools.PNG)  
 
 ## Assembler syntax
 
 Each assembly command has the following syntax:  
+```
 Label Opcode Operand ;Comment
+```
 
 For example:  
-store_routine STR R0, [R1] ;Store value of R0 into R1  
+```
+store_routine STR R0, [R1] ;Store R0 -> R1 
+``` 
 
-<br><br><br>
+<br>
+
+---
 
 ## Overall system architecture
 
 ![ARM system example](img/intro/arm_system_example.PNG)  
 
-APB - ARM Peripherial bus  
-AHB - Advanced High Performance Bus  
+`APB` - ARM Peripherial bus  
+`AHB` - Advanced High Performance Bus  
 <br>
 
 ## Tightly-Coupled Memory
@@ -41,4 +47,6 @@ For more info please refer the following link:
 
 ![ARM system example](img/intro/tcm_memory.PNG)
 
-<br><br><br>
+<br>
+
+---

@@ -2,6 +2,12 @@
 
 ## Links
 
+### Internal
+
+[Course Content](course/README.md)
+
+### External
+
 [ARM assembler simulator](https://wunkolo.github.io/OakSim)
 
 [Systemcall table per arch](https://chromium.googlesource.com/chromiumos/docs/+/master/constants/syscalls.md)

@@ -26,9 +26,9 @@ with processor exceptions and privileged operations.
 
 Some registers have spacial porpuses:  
 * R0 to R12 - General propuse registers
-* R13 - Stack Pointer (SP)
-* R14 - Linkn Register (LR), stores return locationn for functions
-* R15 - Program Counter (PC), containers the current command address plus 4.
+* R13 - Stack Pointer (`SP`)
+* R14 - Linkn Register (`LR`), stores return location for functions
+* R15 - Program Counter (`PC`), containers the current command address plus 4.
 
 CPSR register is the "Current Program Status Register".  
 ![CPSR register](img/architecture/register-cpsr.PNG)
@@ -67,15 +67,15 @@ On Cortex-M processors, there are:
 
 ## ARM data flow
 
-ARM is implementing the RISC architecture. Part of RISC  
-architecture is the load/store architecture. So ARM processors  
-have two instruction types, for transferring data in and out 
-of the processor.     
+ARM is implementing the RISC architecture.     
+ARM implements `load/store` architecture that part of RISC architecture.  
+Read [here](https://en.wikipedia.org/wiki/Load%E2%80%93store_architecture) 
+about load/store architecture.
 
 ARM commands can have two source registers (Rn, Rm), and one  
 distinationn register (Rd).
 
-Rm register can עם through both Barrel shifer and ALU in sigle instruction.  
+Rm register can go through both Barrel shifer and ALU in sigle instruction.  
 
 ![ARM data flow](img/architecture/arm_data_flow.PNG)  
 
