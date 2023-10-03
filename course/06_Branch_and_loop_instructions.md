@@ -11,7 +11,7 @@ store the return address.
 
 We can append commands to the B command and get conditional  
 branching command.  
-For example: B + EQ = BEQ (Branch if euqal).
+For example: B + EQ = BEQ (Branch if equal).
 ![basic instr](img/branch_and_loop/branch_commands.PNG)
 
 Compare and Bruch instructions are helpful in loops;  

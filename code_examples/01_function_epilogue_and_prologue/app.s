@@ -1,5 +1,5 @@
 /*
-* @brief: This file contains ASM code that demonstates
+* @brief: This file contains ASM code that demonstrates
 *         how to write a basic function with a proper
 *         prologue and epilogue
 */

@@ -10,18 +10,18 @@
 
 [ARM assembler simulator](https://wunkolo.github.io/OakSim)
 
-[Systemcall table per arch](https://chromium.googlesource.com/chromiumos/docs/+/master/constants/syscalls.md)
+[system call table per arch](https://chromium.googlesource.com/chromiumos/docs/+/master/constants/syscalls.md)
 
 </br>
 
 ## GNU build command reference
 
-Assemble assemply source file into object file
+Assemble assembly source file into object file
 ``` sh
 as -o program.o program.s
 ```
 
-Assemble assemply source file into object file with debugging info
+Assemble assembly source file into object file with debugging info
 ``` sh
 as -g -o program.o program.s
 ```
@@ -100,7 +100,7 @@ echo $?
 
 ### System-calls calling conventions
 
-![syscalls](syscall_conventions.PNG)
+![system calls](syscall_conventions.PNG)
 
 </br>
 

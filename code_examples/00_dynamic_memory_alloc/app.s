@@ -3,7 +3,7 @@
 *         Build and run on ARM32 processors with GNU compiler.
 *
 *         The application allocates 16 bytes in heap.
-*         If the alocation succeeds, it stores the values
+*         If the allocation succeeds, it stores the values
 *         from 16 to 0 in the allocated bytes (one number in each byte).
 *
 *         Output example (mmap2 returned 0x76ffc000):
