@@ -26,7 +26,7 @@ STR instruction can increase the address register:
 ### Pre-Indexed addressing
 
 Pre-Indexed addressing is changing the content of register    
-containing the address, before the instrucction is done.  
+containing the address, before the instruction is done.  
 
 Note the following two instructions:
 ``` asm
@@ -35,7 +35,7 @@ STR R0,[R1, #12]!
 ```
 
 After the first instruction, R1 will not be modified.  
-After the second instruvtion, R1 will be equal to R1+12.
+After the second instruction, R1 will be equal to R1+12.
 
 It is important to notice, that the effective address in  
 both cases is `R1 + #12`.
@@ -45,7 +45,7 @@ both cases is `R1 + #12`.
 ### Post-Indexed addressing
 
 Post-Indexed addressing is changing the content of register    
-containing the address, after the instrucction is done.  
+containing the address, after the instruction is done.  
 
 ``` asm
 STR R0, [R1], #12
