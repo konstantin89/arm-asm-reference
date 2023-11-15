@@ -28,6 +28,8 @@
 
     .equ MMAP2_SYS_NUMBER, 192
     .equ MMAP2_FAILED_RETURN_CODE, -1
+    .equ EXIT_SYS_NUMBER, 1
+
     
     .equ PROT_READ,            0x1    // Page can be read.  
     .equ PROT_WRITE,           0x2    // Page can be written.  
@@ -41,7 +43,6 @@
     .equ MAP_PRIVATE,	       0x02
     
     .equ MAP_ANONYMOUS_SHARED, 0x22
-    
     
     PTR .req R1
     LOOP_COUNTER .req R2
@@ -75,12 +76,15 @@ _loop:
           
          BNE _loop
          
+         // Set exit code to success
+         MOV R0, #0
          B _exit
         
 _allocation_failed:
-        
+        // Set exit code to error
+        MOV R0, #1
         B _exit
 
 _exit:
-        MOV R7,#1
+        MOV R7, #EXIT_SYS_NUMBER
         SWI #0

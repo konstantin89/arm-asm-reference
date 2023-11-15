@@ -61,7 +61,8 @@ _start:
     
 _end:
 
-    mov R7,#1
-    swi 0
+    MOV R0, #0
+    MOV R7,#1
+    SWI 0
 
 
