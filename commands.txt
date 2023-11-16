@@ -19,3 +19,5 @@
     x                     - Examine memory
     x/32b 0x10070         - Examine 32 bytes from address 0x10070
     p /d $r1              - Print R1 as signed decimal
+
+    layout asm - Show ASM code instead of C/C++

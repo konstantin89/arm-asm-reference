@@ -8,48 +8,56 @@
 
 /*
 *
-* @brief: Function that calculates the Nth term 
-*         of arithmetic progression.
+* @brief: Implements e Sum(int x, int y, int z)
 *
-*         a[n] = a[1] + d*(n-1)
+* @param: int x
+* @param: int y
+* @param: int z
 *
-* @param: int a[1] - The first element of the progression.
-* @param: int d - Common difference.
-* @param: int n - Index of the required element.
-*
-* @returns: int a[n] - Nth term of the progression.
+* @returns: x+y+z
 */
-calculate_nth_element:
+sum:
 
-    // prologue
-    STR FP, [SP, #-4]!
-    ADD FP, SP, #0
-    SUB SP, SP, #16        // Allocate space for another 3 variables on the stack.
-    STR R0, [FP, #-8]
-    STR R1, [FP, #-12]
-    STR R2, [FP, #-16]
+/*
 
-    // logic
-    LDR R2, [FP, #-8]
-    MOV R1, R2             // R1 stores a[n]
+x = fp-8
+y = fp-12
+z = fp-16
+
+-------------   stack   ----------------
+                <--- sp          fp-20
+int z                            fp-16
+int y                            fp-12
+int x                            fp-8
+old fp                           fp-4
+return addr    <--- fp           fp-0
+
+----------------------------------------
+*/
+    // Prologue
+
+    str     fp, [sp, #-4]!   // Store FP of previous frame
+    add     fp, sp, #0       // Create new frame
+    sub     sp, sp, #20      // Allocate 20 bytes on current stack frame
+
+    // Logic
+    str     r0, [fp, #-8]
+    str     r1, [fp, #-12]
+    str     r2, [fp, #-16]
+
+    ldr     r2, [fp, #-8]      // R2 <- x
+    ldr     r3, [fp, #-12]     // R3 <- y 
+
+    add     r2, r2, r3         // R2 = x + y
+    ldr     r3, [fp, #-16]     // R3 <- z
+    add     r3, r2, r3
+
+    // Epilogue
+    mov     r0, r3          // Store return value in R0
+    add     sp, fp, #0      // Remove current stack
+    ldr     fp, [sp], #4    // Restore previous frame pointer
+    bx      lr 
     
-    LDR R2, [FP, #-12]     // R2 stores d
-    LDR R3, [FP, #-16]     // R3 stores n
-    
-    SUB R3, R3, #1
-    
-    MUL R0, R2, R3         // d*(n-1)
-    
-    Add R1, R0, R1         // a[0] + d*(n-1)
-
-
-    // epilogue
-
-    MOV     R0, R1       // Store the return value in R0
-    ADD     SP, FP, #0
-    LDR     FP, [SP], #4
-    BX      LR
-        
 _start:
     
     
@@ -57,7 +65,12 @@ _start:
     MOV R1, #2
     MOV R2, #3
     
-    BL calculate_nth_element
+    BL sum
+
+    MOV R0, #3
+    MOV R1, #4
+    MOV R2, #5
+    BL sum
     
 _end:
 

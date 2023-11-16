@@ -1,0 +1,58 @@
+
+Frame pointer - base of current stack frame.
+Stack pointer - top of the stack.
+
+You can access data on stack relatively to the  
+stack pointer of to the frame pointer.   
+To access int x, you can use the following:  
+
+    
+
+---------------
+|             | 
+|             | 
+|             | 
+|             | 
+|             | 
+|             | 
+|             | <- current $sp      fp-20
+|    int z    |                     fp-16
+|    int y    |                     fp-12
+|    int x    |                     fp-8
+|  old $fp    |                     fp-4
+| return addr | <- current $fp      fp-0
+|             | 
+|             | 
+|             | 
+|             | 
+|             | 
+|             | 
+|             | 
+|             | 
+|             | 
+---------------
+
+
+Here is example of decompiled Add function:
+
+; int __cdecl Add(int x, int y)
+EXPORT Add
+Add
+
+y= -0xC
+x= -8
+
+frame_ptr = R11                 // Name R11 as FP
+PUSH    {frame_ptr}             // Push previous FP
+ADD     frame_ptr, SP, #0       // Start new frame
+SUB     SP, SP, #0xC            // Allocate data on new frame
+STR     R0, [frame_ptr,#x]
+STR     R1, [frame_ptr,#y]
+LDR     R2, [frame_ptr,#x]      // R2 = x
+LDR     R3, [frame_ptr,#y]      // R3 = y
+ADD     R3, R2, R3              // R3 = R2 + R2
+MOV     R0, R3                  // Store result in R0 (return value)
+
+MOV     SP, frame_ptr           // Remove stack of this function
+POP     {frame_ptr}             // Pop previous FP
+BX      LR
