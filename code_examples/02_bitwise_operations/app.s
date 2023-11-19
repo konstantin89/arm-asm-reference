@@ -10,6 +10,9 @@ _start:
     // AND operation
     AND R2, R0, R1   // R2 = 0101 & 1010 = 0
 
+    // Perform AND and modify flags with answer
+    ANDS R2, R0, R1   // R2 = 0101 & 1010 = 0
+
     // OR operation
     ORR R2, R0, R1   // R2 = 0101 | 1010 = 1111
 
