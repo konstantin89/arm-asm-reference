@@ -20,19 +20,30 @@ sum:
 
 /*
 
+IMPORTANT!
+
+Be aware! The first variable on the stack is at [FP, #-4].  
+The reason for that is that the stack is moving from high address to the low address.  
+For this reason, if x is in [FP, #-8], its located in the following bytes:   
+[FP, #-8],[FP, #-7],[FP, #-6],[FP, #-5]
+
+
 x = fp-8
 y = fp-12
 z = fp-16
 
--------------   stack   ----------------
-                <--- sp          fp-20
-int z                            fp-16
-int y                            fp-12
-int x                            fp-8
-old fp                           fp-4
-return addr    <--- fp           fp-0
+-------------   stack   ---------------- fp-20  <--- sp       
+                                                    
+---------------------------------------- fp-16
+int z                           
+---------------------------------------- fp-12
+int y                            
+---------------------------------------- fp-8
+int x                            
+---------------------------------------- fp-4
+old fp                           
+---------------------------------------- fp
 
-----------------------------------------
 */
     // Prologue
 
@@ -70,7 +81,7 @@ _start:
     MOV R0, #3
     MOV R1, #4
     MOV R2, #5
-    BL sum
+    BL sum        // BL stores return address in LR (link register)
     
 _end:
 
